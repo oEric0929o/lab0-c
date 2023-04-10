@@ -156,7 +156,7 @@ void q_swap(struct list_head *head)
         return;
 
     struct list_head *p;
-    for (p = head->next; p->next != head; p = p->next)
+    for (p = head->next; p->next != head && p != head; p = p->next)
         list_move(p, p->next);
 }
 
